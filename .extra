@@ -13,7 +13,9 @@ alias dev='cd /Users/Jake/dev'
 # GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 # git config --global user.email "$GIT_AUTHOR_EMAIL"
 
-
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
 #git $tuff
 alias cleantracking='git remote prune origin'
