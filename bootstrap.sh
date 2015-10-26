@@ -8,7 +8,7 @@
 
 dir=~/dev/dotfiles                    # dotfiles directory
 olddir=~/dev/dotfiles/_old             # old dotfiles backup directory
-files="bash_profile bash_prompt work"    # list of files/folders to symlink in homedir
+files="bash_profile bash_prompt inputrc work"    # list of files/folders to symlink in homedir
 
 ##########
 
