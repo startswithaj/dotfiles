@@ -1,0 +1,113 @@
+{
+  "atomic_save": false,
+  "auto_match_enabled": true,
+  "bold_folder_labels": true,
+  "coffee_path": "/usr/local/lib/node_modules/coffee-script/bin",
+  "color_scheme": "Packages/User/SublimeLinter/Predawn Monokai (SL).tmTheme",
+  "detect_indentation": false,
+  "ensure_newline_at_eof_on_save": true,
+  "file_exclude_patterns":
+  [
+    ".DS_Store",
+    "webclient.js",
+    "browserify.js",
+    "coverage.html"
+  ],
+  "folder_exclude_patterns":
+  [
+    "js",
+    "build",
+    "app",
+    "app-dev",
+    "splash",
+    "assets",
+    "bower_components",
+    ".svn",
+    ".git",
+    ".grunt",
+    ".hg",
+    "CVS",
+    "node_modules",
+    "doc",
+    "docs",
+    "assets/frameworks",
+    "client/src/public/assets/stylesheets",
+    ".meteor"
+  ],
+  "font_face": "Menlo",
+  "font_size": 13,
+  "hot_exit": false,
+  "ignored_packages":
+  [
+    "MarkdownEditing",
+    "Vintage"
+  ],
+  "line_padding_bottom": 0.5,
+  "line_padding_top": 0.5,
+  "node_path": "/usr/local/bin",
+  "overlay_scroll_bars": "enabled",
+  "remember_open_files": false,
+  "rulers":
+  [
+    120
+  ],
+  "scroll_past_end": true,
+  "shift_tab_unindent": true,
+  "show_full_path": true,
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": true,
+  "word_wrap": false
+}
+
+// Linter
+
+{
+    "user": {
+        "debug": true,
+        "delay": 0.8,
+        "error_color": "D02000",
+        "gutter_marks": true,
+        "gutter_theme": "Packages/SublimeLinter/gutter-themes/Default/Default.gutter-theme",
+        "gutter_theme_excludes": [],
+        "lint_mode": "background",
+        "linters": {
+            "coffeelint": {
+                "@disable": false,
+                "args": [],
+                "excludes": []
+            },
+            "eslint": {
+                "@disable": true,
+                "args": [],
+                "excludes": []
+            }
+        },
+        "mark_style": "solid underline",
+        "no_column_highlights_line": true,
+        "passive_warnings": true,
+        "paths": {
+            "linux": [],
+            "osx": [],
+            "windows": []
+        },
+        "python_paths": {
+            "linux": [],
+            "osx": [],
+            "windows": []
+        },
+        "rc_search_limit": 3,
+        "shell_timeout": 10,
+        "show_errors_on_save": true,
+        "show_marks_in_minimap": true,
+        "syntax_map": {
+            "html (django)": "html",
+            "html (rails)": "html",
+            "html 5": "html",
+            "php": "html",
+            "python django": "python"
+        },
+        "warning_color": "DDB700",
+        "wrap_find": true
+    }
+}

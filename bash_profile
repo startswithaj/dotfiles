@@ -1,6 +1,8 @@
 # Commands I forget
 # list functions declare -f
 
+alias obp="subl ~/.bash_profile"
+
 for file in ~/.{bash_prompt,work}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
@@ -119,3 +121,9 @@ relPathFiles () {
   (find . -iname $1 ; find . -iname $2) | xargs -n2 bash -cil 'relpath "$1" "$2"' arg0
 }
 
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/jake/Downloads/google-cloud-sdk/path.bash.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/jake/Downloads/google-cloud-sdk/completion.bash.inc'

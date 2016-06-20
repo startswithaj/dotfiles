@@ -56,3 +56,8 @@
   added = yellow
   changed = green
   untracked = cyan
+[user]
+	name = Jake Mc
+	email = "(none)"
+[credential]
+	helper = osxkeychain
