@@ -1,7 +1,7 @@
 # Commands I forget
 # list functions declare -f
 
-alias obp="subl ~/.bash_profile"
+alias obp="code ~/.bash_profile"
 
 for file in ~/.{bash_prompt,work}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
@@ -32,7 +32,8 @@ fi
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-
+alias   del="rmtrash"
+alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
 
 # git
 alias gs="git status -s"
@@ -45,6 +46,10 @@ alias authors='git shortlog -s -n --all' #an use -e as well for ungrouped
 
 alias lgm='git log -1 --pretty | pbcopy'
 alias lgc='git log --pretty=format:%h -n 1 | pbcopy'        # last git commit hash
+
+alias yds='yarn dev-server-hot'
+alias yb='yarn bootstrap'
+gc() { git branch | grep $@ | sed -n 1p | xargs git checkout; }
 
 # Using tig now
 # fgd() { find . -iname $@ | xargs git diff; }
@@ -122,8 +127,16 @@ relPathFiles () {
 }
 
 
-# The next line updates PATH for the Google Cloud SDK.
-source '/Users/jake/Downloads/google-cloud-sdk/path.bash.inc'
+function pls {
+  ls -la | grep -v '^d' | grep -v 'total'| awk '{print $NF}' | fzf --preview="head -$LINES {}"
+}
 
-# The next line enables shell command completion for gcloud.
-source '/Users/jake/Downloads/google-cloud-sdk/completion.bash.inc'
+function pport {
+  lsof -P -i -sTCP:LISTEN | grep LISTEN | fzf -m $FZF_COMPLETION_OPTS --preview "echo {} | tr -s ' ' | cut -d ' ' -f 2 | xargs lsof -p | grep cwd "
+}
+export PATH="/usr/local/sbin:$PATH"
+
+export NVM_DIR="/Users/jake/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
